@@ -75,11 +75,21 @@ let slidesize = slides.length;
 console.log(slidesize)
 
 for (let i = 0; i < slidesize; i++) {
-	let dot = document.createElement("div");
-	dot.setAttribute("class", "dot dot_selected");
-	// dot.setAttribute("id", i);
-	let dotContainer = document.querySelector(".dots");
-	dotContainer.appendChild(dot);
+	if (i === 0) {
+		//dot selected
+		let dot = document.createElement("div");
+		dot.setAttribute("class", "dot dot_selected");
+		// dot.setAttribute("id", i);
+		let dotContainer = document.querySelector(".dots");
+		dotContainer.appendChild(dot);
+	}else{
+		//dots not selected
+		let dot = document.createElement("div");
+		dot.setAttribute("class", "dot");
+		// dot.setAttribute("id", i);
+		let dotContainer = document.querySelector("dots");
+		dotContainer.appendChild(dot);
+	}
 	
 }
 
