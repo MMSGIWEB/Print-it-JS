@@ -16,76 +16,72 @@ const slides = [
 		"tagLine":"Autocollants <span>avec découpe laser sur mesure</span>"
 	}
 ]
-
-// const bannerImg = document.querySelectorAll(".banner-img");
-// const left = document.querySelector(".arrow_left")
-// const right = document.querySelector(".arrow_right")
-
-// console.log(bannerImg)
-// console.log(left)
-// console.log(right)
-// // let slideContent = [
-// 	"images/slideshow/slide1.png",
-// 	"images/slideshow/slide2.png",
-// 	"images/slideshow/slide3.png",
-// 	"images/slideshow/slide4.png",
-// ]
-// console.log(slideContent);
+console.log(slides)
 
 //  valeurs img
+let image = document.querySelector(".banner-img");
+console.log(image);
 let index = 0
 console.log(index);
 
-console.log(slideContent.length);
-let lastimg = slideContent.length -1
-let startimg = 0
-
-// valeur imgs html
-let img = document.querySelector(".first");
-console.log(img);
-
-// let imgs = document.querySelectorAll(".banner-img");
-// console.log(imgs);
-
 // valeurs flèches
-let left = document.querySelector(".arrow_left");
-console.log(left);
+let leftArrow = document.querySelector(".arrow_left");
+console.log(leftArrow);
 
-let right = document.querySelector(".arrow_right");
-console.log(right);
+let rightArrow = document.querySelector(".arrow_right");
+console.log(rightArrow);
 
 // valeur .banner p
-let tagLine = document.querySelector("#banner p");
+let tagLine = document.getElementById("tagLine");
 console.log(tagLine);
 
-console
+console.log(slides.length);
+let lastImg = slides.length -1
+let firstImg = 0
+console.log(lastImg)
+console.log(firstImg)
+
+// image.setAttribute("src", slides[index])
+// tagLine.innerHTML = index
+
 // EventListener flèche gauche
-left.addEventListener("click", function() {
-if(index === startimg){
-	index = lastimg
+leftArrow.addEventListener("click", function() {
+if(index === firstImg){
+	index = lastImg
 }
 else {
 	index = index - 1
 	// ou   index --
 }
-img.setAttribute("src", slideContent[index])
+img.setAttribute("src", slides[index])
 // tagLine.innerHTML = index
 })
 
 // EventListener flèche droite
-right.addEventListener("click", function() {
-	if(index === lastimg){
-		index = startimg
-	}
-	else {
-		index = index + 1
-		// ou   index ++
-	}
-	img.setAttribute("src", slideContent[index])
-	// tagLine.innerHTML = index
-	})
+rightArrow.addEventListener("click", function() {
+if(index === lastImg){
+	index = firstImg
+}
+else {
+	index = index + 1
+	// ou   index ++
+}
+img.setAttribute("src", slides[index])
+// tagLine.innerHTML = index
+})
 
+//boucle + création des .dots &__selected
+let slidesize = slides.length;
+console.log(slidesize)
 
+for (let i = 0; i < slidesize; i++) {
+	let dot = document.createElement("div");
+	dot.setAttribute("class", "dot dot_selected");
+	// dot.setAttribute("id", i);
+	let dotContainer = document.querySelector(".dots");
+	dotContainer.appendChild(dot);
+	
+}
 
 
 
