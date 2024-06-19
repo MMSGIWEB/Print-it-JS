@@ -26,7 +26,7 @@ let selectedSlide = 0
 
 //initialisation banner
 let img = document.querySelector(".banner-img");
-img.setAttribute("src", "./assets/./assets/images/slideshow/" + slides[selectedSlide]["image"]); //cible les images dont le tableau 'slides' a la réf
+img.setAttribute("src", "./assets/./assets/images/slideshow/" + slides[selectedSlide]["image"]); //AKA : cheminement de l'image cible. Cible les images dont le tableau 'slides' a la réf
 
 // console.log(img);
 
