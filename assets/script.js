@@ -62,7 +62,7 @@ console.log(leftArrow);
 
 function prevClick() {
 	if (selectedSlide === 0) {
-		selectedSlide = slideSize - 1;
+		selectedSlide = slideSize - 1; //attribution d'une nouvelle valeur si 'true'
 		img.setAttribute("src", "./assets/images/slideshow/" + slides[selectedSlide]["image"]);
 		tagLine.innerHTML = slides[selectedSlide]["tagLine"];
 		dot = document.getElementById(selectedSlide);
@@ -70,7 +70,7 @@ function prevClick() {
 		NotSelected = document.getElementById(0); //récup des autres dots
 		NotSelected.classList.remove("dot_selected"); //non remplissage des dots pas séléctionnés
 	} else {
-		selectedSlide--;
+		selectedSlide--; //attribution d'une nouvelle valeur si 'false'
 		img.setAttribute("src", "./assets/images/slideshow/" + slides[selectedSlide]["image"]);
 		tagLine.innerHTML = slides[selectedSlide]["tagLine"];
 		dot = document.getElementById(selectedSlide);
@@ -86,8 +86,8 @@ const rightArrow = document.querySelector(".arrow_right");
 console.log(rightArrow);
 
 function nextClick() {
-	if (selectedSlide === slideSize - 1) {
-		selectedSlide = 0;
+	if (selectedSlide === slideSize - 1) { 
+		selectedSlide = 0; //attribution d'une nouvelle valeur si 'true'
 		img.setAttribute("src", "./assets/images/slideshow/" + slides[selectedSlide]["image"]);
 		tagLine.innerHTML = slides[selectedSlide]["tagLine"];
 		dot = document.getElementById(selectedSlide);
@@ -95,7 +95,7 @@ function nextClick() {
 		NotSelected = document.getElementById(slideSize - 1);  //récup des autres dots
 		NotSelected.classList.remove("dot_selected"); //non remplissage des dots pas séléctionnés
 	}else {
-		selectedSlide++;
+		selectedSlide++; //attribution d'une nouvelle valeur si 'false'
 		img.setAttribute("src", "./assets/images/slideshow/" + slides[selectedSlide]["image"]);
 		tagLine.innerHTML = slides[selectedSlide]["tagLine"];
 		dot = document.getElementById(selectedSlide);
