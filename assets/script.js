@@ -58,7 +58,7 @@ for (let i = 0; i < slideSize; i++) {
 
 // function & EventListener flèche gauche
 const leftArrow = document.querySelector(".arrow_left");
-console.log(leftArrow);
+// console.log(leftArrow);
 
 function prevClick() {
 	if (selectedSlide === 0) {
@@ -83,7 +83,7 @@ leftArrow.addEventListener("click", prevClick); //application du EventListener f
 
 // Function & EventListener flèche droite
 const rightArrow = document.querySelector(".arrow_right");
-console.log(rightArrow);
+// console.log(rightArrow);
 
 function nextClick() {
 	if (selectedSlide === slideSize - 1) { 
@@ -105,61 +105,3 @@ function nextClick() {
 	}
 }
 rightArrow.addEventListener("click", nextClick) //application du EventListener flèche droite
-
-
-
-// let lastImg = slides.length -1
-// let firstImg = 0
-
-
-// img.setAttribute("src", slides[selectedSlide])
-// tagLine.innerHTML = selectedSlide
-
-// leftArrow.addEventListener("click", function(){
-// if(selectedSlide === firstImg){
-// 	selectedSlide = lastImg
-// 	img.setAttribute("src", "./assets/images/slideshow/" + slides[selectedSlide]["image"]);
-// 	tagLine.innerHTML = slides[selectedSlide]["tagLine"];
-// 	dot = document.getElementById(selectedSlide);
-// 	dot.classList.add("dot_selected");
-// 	NotSelected = document.getElementById(0);
-// 	NotSelected.classList.remove("dot_selected");
-// }
-// else {
-// 	selectedSlide = selectedSlide - 1
-// 	// ou   selectedSlide --
-// 	img.setAttribute("src", "./assets/images/slideshow/" + slides[selectedSlide]["image"]);
-// 	tagLine.innerHTML = slides[selectedSlide]["tagLine"];
-// 	dot = document.getElementById(selectedSlide);
-// 	dot.classList.add("dot_selected");
-// 	NotSelected = document.getElementById(selectedSlide + 1);
-// 	NotSelected.classList.remove("dot_selected");
-// }
-// img.setAttribute("src", "./assets/images/slideshow/" + slides[selectedSlide]["image"]);
-// tagLine.innerHTML = slides[selectedSlide]["tagLine"];
-// })
-
-
-// rightArrow.addEventListener("click", function(){
-// if(selectedSlide === lastImg){
-// 	selectedSlide = firstImg;
-// 	// img.setAttribute("src", "./assets/images/slideshow/" + slides[selectedSlide]["image"]);
-// 	// tagLine.innerHTML = slides[selectedSlide]["tagLine"];
-// 	dot = document.getElementById(selectedSlide);
-// 	dot.classList.add("dot_selected");
-// 	NotSelected = document.getElementById(slideSize - 1);
-// 	NotSelected.classList.remove("dot_selected");
-// }
-// else {
-// 	selectedSlide = selectedSlide + 1
-// 	// ou   selectedSlide ++
-// 	// img.setAttribute("src", "./assets/images/slideshow/" + slides[selectedSlide]["image"]);
-// 	// tagLine.innerHTML = slides[selectedSlide]["tagLine"];
-// 	dot = document.getElementById(selectedSlide);
-// 	dot.classList.add("dot_selected");
-// 	NotSelected = document.getElementById(selectedSlide - 1);
-// 	NotSelected.classList.remove("dot_selected");
-// }
-// img.setAttribute("src", "./assets/images/slideshow/" + slides[selectedSlide]["image"]);
-// tagLine.innerHTML = slides[selectedSlide]["tagLine"];
-// })
