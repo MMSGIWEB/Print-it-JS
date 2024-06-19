@@ -26,13 +26,13 @@ let selectedSlide = 0
 
 //initialisation banner
 let img = document.querySelector(".banner-img");
-img.setAttribute("src", "./assets/./assets/images/slideshow/" + slides[selectedSlide]["image"]);
+img.setAttribute("src", "./assets/./assets/images/slideshow/" + slides[selectedSlide]["image"]); //cible les images dont le tableau 'slides' a la réf
 
 // console.log(img);
 
 // initialisation .banner p
-let tagLine = document.getElementById("tagLine");
-tagLine.innerHTML = slides[selectedSlide]["tagLine"];
+let tagLine = document.getElementById("tagLine"); //récup de la balise p
+tagLine.innerHTML = slides[selectedSlide]["tagLine"]; //cible les tagLine dans le tableau 'slides'
 
 // console.log(tagLine);
 
@@ -42,16 +42,16 @@ for (let i = 0; i < slideSize; i++) {
 		//selected dot
 		let dot = document.createElement("div");
 		dot.setAttribute("class", "dot dot_selected");
-		dot.setAttribute("id", i);
-		let dotContainer = document.querySelector(".dots");
-		dotContainer.appendChild(dot);
+		dot.setAttribute("id", i); // attribution d'un id avec un chiffre en valeur
+		let dotContainer = document.querySelector(".dots"); //récup du conteneur .dots
+		dotContainer.appendChild(dot); // placement des dots dans le conteneur .dots
 	}else{
 		//not selected dots
 		let dot = document.createElement("div");
 		dot.setAttribute("class", "dot");
-		dot.setAttribute("id", i);
-		let dotContainer = document.querySelector(".dots");
-		dotContainer.appendChild(dot);
+		dot.setAttribute("id", i); // attribution d'un id avec un chiffre en valeur
+		let dotContainer = document.querySelector(".dots"); //récup du conteneur .dots
+		dotContainer.appendChild(dot); // placement des dots dans le conteneur .dots
 	}
 	
 }
@@ -67,19 +67,19 @@ function prevClick() {
 		tagLine.innerHTML = slides[selectedSlide]["tagLine"];
 		dot = document.getElementById(selectedSlide);
 		dot.classList.add("dot_selected");
-		NotSelected = document.getElementById(0);
-		NotSelected.classList.remove("dot_selected");
+		NotSelected = document.getElementById(0); //récup des autres dots
+		NotSelected.classList.remove("dot_selected"); //non remplissage des dots pas séléctionnés
 	} else {
 		selectedSlide--;
 		img.setAttribute("src", "./assets/images/slideshow/" + slides[selectedSlide]["image"]);
 		tagLine.innerHTML = slides[selectedSlide]["tagLine"];
 		dot = document.getElementById(selectedSlide);
 		dot.classList.add("dot_selected");
-		NotSelected = document.getElementById(selectedSlide + 1);
-		NotSelected.classList.remove("dot_selected");
+		NotSelected = document.getElementById(selectedSlide + 1); //récup des autres dots
+		NotSelected.classList.remove("dot_selected"); //non remplissage des dots pas séléctionnés/autres dots pas séléctionnés
 	}
 }
-leftArrow.addEventListener("click", prevClick);
+leftArrow.addEventListener("click", prevClick); //application du EventListener flèche gauche
 
 // Function & EventListener flèche droite
 const rightArrow = document.querySelector(".arrow_right");
@@ -92,19 +92,19 @@ function nextClick() {
 		tagLine.innerHTML = slides[selectedSlide]["tagLine"];
 		dot = document.getElementById(selectedSlide);
 		dot.classList.add("dot_selected");
-		NotSelected = document.getElementById(slideSize - 1);
-		NotSelected.classList.remove("dot_selected");
+		NotSelected = document.getElementById(slideSize - 1);  //récup des autres dots
+		NotSelected.classList.remove("dot_selected"); //non remplissage des dots pas séléctionnés
 	}else {
 		selectedSlide++;
 		img.setAttribute("src", "./assets/images/slideshow/" + slides[selectedSlide]["image"]);
 		tagLine.innerHTML = slides[selectedSlide]["tagLine"];
 		dot = document.getElementById(selectedSlide);
 		dot.classList.add("dot_selected");
-		NotSelected = document.getElementById(selectedSlide - 1);
-		NotSelected.classList.remove("dot_selected");
+		NotSelected = document.getElementById(selectedSlide - 1);  //récup des autres dots
+		NotSelected.classList.remove("dot_selected"); //non remplissage des dots pas séléctionnés
 	}
 }
-rightArrow.addEventListener("click", nextClick)
+rightArrow.addEventListener("click", nextClick) //application du EventListener flèche droite
 
 
 
