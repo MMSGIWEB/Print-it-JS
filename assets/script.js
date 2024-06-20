@@ -65,9 +65,9 @@ function prevClick() {
 		selectedSlide = slideSize - 1; //attribution d'une nouvelle valeur si 'true'
 		img.setAttribute("src", "./assets/images/slideshow/" + slides[selectedSlide]["image"]);
 		tagLine.innerHTML = slides[selectedSlide]["tagLine"];
-		dot = document.getElementById(selectedSlide);
-		dot.classList.add("dot_selected");
-		NotSelected = document.getElementById(0); //récup des autres dots
+		dot = document.getElementById(selectedSlide); //dot cible l'image selectionnée
+		dot.classList.add("dot_selected"); //on lui donne la classe attribuée lors de la boucle créée plus haut pour dot(s)
+		NotSelected = document.getElementById(0); //ciblage des autres dots
 		NotSelected.classList.remove("dot_selected"); //non remplissage des dots pas séléctionnés
 	} else {
 		selectedSlide--; //attribution d'une nouvelle valeur si 'false'
@@ -90,9 +90,9 @@ function nextClick() {
 		selectedSlide = 0; //attribution d'une nouvelle valeur si 'true'
 		img.setAttribute("src", "./assets/images/slideshow/" + slides[selectedSlide]["image"]);
 		tagLine.innerHTML = slides[selectedSlide]["tagLine"];
-		dot = document.getElementById(selectedSlide);
-		dot.classList.add("dot_selected");
-		NotSelected = document.getElementById(slideSize - 1);  //récup des autres dots
+		dot = document.getElementById(selectedSlide); //dot cible l'image selectionnée
+		dot.classList.add("dot_selected"); //on lui donne la classe attribuée lors de la boucle créée plus haut pour dot(s)
+		NotSelected = document.getElementById(slideSize - 1);  //ciblage des autres dots
 		NotSelected.classList.remove("dot_selected"); //non remplissage des dots pas séléctionnés
 	}else {
 		selectedSlide++; //attribution d'une nouvelle valeur si 'false'
