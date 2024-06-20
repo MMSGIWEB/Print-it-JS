@@ -18,7 +18,7 @@ const slides = [
 ]
 // console.log(slides)
 const slideSize = slides.length;
-// console.log(slideSize);
+console.log(slideSize);
 
 //  slide actuelle
 let selectedSlide = 0
@@ -41,7 +41,7 @@ for (let i = 0; i < slideSize; i++) {
 	if (i === 0) {
 		//selected dot
 		let dot = document.createElement("div");
-		dot.setAttribute("class", "dot dot_selected");
+		dot.setAttribute("class", "dot dot_selected"); //attribution des classes (.css)
 		dot.setAttribute("id", i); // attribution d'un id avec un chiffre en valeur
 		let dotContainer = document.querySelector(".dots"); //récup du conteneur .dots
 		dotContainer.appendChild(dot); // placement des dots dans le conteneur .dots
